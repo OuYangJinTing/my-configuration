@@ -1,0 +1,12 @@
+---
+language: ruby
+cache: bundler
+rvm:
+  - 3.0.0
+before_install: gem install bundler -v 2.2.3 && bundle install
+script: bundle exec rake test
+after_success: bundle exec rubocop
+after_failure: bundle exec rubocop
+notifications:
+  email: false
+...
